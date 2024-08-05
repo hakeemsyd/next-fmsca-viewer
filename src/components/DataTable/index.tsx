@@ -7,7 +7,7 @@ import Papa from "papaparse";
 import CircularProgress from "@mui/material/CircularProgress";
 import { formatDate } from "@/utils";
 const DataTable = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<any[]>([]);
     const [pageSize, setPageSize] = useState(5);
     const [loading, setLoading] = useState(false);
 
