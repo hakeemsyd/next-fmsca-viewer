@@ -38,6 +38,24 @@ export const formatDate = (dateString: string, withDaySuffix: boolean, completeM
     else return `${day} ${month} ${year}`;
 };
 
+export const formatDateMonth = (dateString: string, completeMonth: boolean): string => {
+    if (dateString.length === 0) return "";
+    const date: Date = new Date(dateString);
+    const day: number = date.getDate();
+    const month: string = completeMonth ? completeMonths[date.getMonth()] : abbreviatedMonths[date.getMonth()];
+    const year: number = date.getFullYear();
+    return `${month} ${year}`;
+};
+
+export const formatDateYear = (dateString: string, completeMonth: boolean): string => {
+    if (dateString.length === 0) return "";
+    const date: Date = new Date(dateString);
+    const day: number = date.getDate();
+    const month: string = completeMonth ? completeMonths[date.getMonth()] : abbreviatedMonths[date.getMonth()];
+    const year: number = date.getFullYear();
+    return `${year}`;
+};
+
 function getDaySuffix(day: number): string {
     if (day > 3 && day < 21) return "th";
     switch (day % 10) {
